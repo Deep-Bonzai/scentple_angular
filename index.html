@@ -11,7 +11,9 @@
     <script src="https://use.fontawesome.com/a04d9e4c1c.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
-<body ng-controller="MainCtrl as mainCtrl">
+<body 
+    ng-controller="MainCtrl as mainCtrl"
+>
 	<header>
 		<nav class="navbar navbar-fixed-top">
 			<div class="container nav-container">
@@ -24,9 +26,17 @@
 		</nav>
 	</header>
 
-	<div class="container" ng-include src="mainCtrl.pickAPage">
-		
-	</div>
+    <select ng-model="mainCtrl.selection" ng-options="option for option in mainCtrl.pageOptions">
+    </select>
+
+    <div class="container" ng-switch="mainCtrl.selection"> 
+        <div ng-switch-when="selection_page.html">
+            <div ng-include src="mainCtrl.selectionPage"></div>
+        </div>
+        <div ng-switch-default="font_page.html">
+            <div ng-include src="mainCtrl.pickAPage"></div>
+        </div>
+    </div>
 
 	<footer class="page-footer">
 	    <div class="container">

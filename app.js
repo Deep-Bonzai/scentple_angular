@@ -7,6 +7,10 @@ function MainController($http) {
 	ctrl.printCard = false;
 	ctrl.contentsJSON = {};
 	ctrl.pickAPage = 'front_page.html';
+	ctrl.selectionPage = 'selection_page.html';
+
+	ctrl.pageOptions = ['front_page.html', 'selection_page.html', 'sample_card.html', 'logo_choices.html']
+	ctrl.selection = ctrl.pageOptions[0];
 
 	function goToIndex () {
 		ctrl.indexClicked = true;

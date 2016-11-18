@@ -3,7 +3,7 @@
 		<div class="row" ng-repeat="scent in mainCtrl.contentsJSON">
 			<div ng-if="scent.featured" class="col-sm-8 col-sm-offset-2">
 				<img 
-					src="{{scent.fragranceImage}}" 
+					ng-src="{{scent.fragranceImage}}" 
 					ng-show="scent.gender == 'women'"
 					class="featured-scent">						
 			</div>
